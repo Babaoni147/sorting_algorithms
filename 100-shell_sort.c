@@ -11,19 +11,22 @@ void shell_sort(int *array, size_t size)
 	size_t gap, i, j;
 	int temp;
 
-	if (array == NULL || !size)
+	if (!array || !size)
 		return;
 
 	/* Calculate the maximum gap */
-	for (gap = 1; gap < size; gap = gap * 3 + 1);
+	gap = 1;
+	while (gap < size)
+		gap = gap * 3 + 1;
+	gap = (gap - 1) / 3;
 
-	/* Shell sort algorithm */
-	for (gap = (gap - 1) / 3; gap; gap = (gap - 1) / 3)
+	/* Shell Sort */
+	for (; gap; gap = (gap - 1) / 3)
 	{
 		for (i = gap; i < size; i++)
 		{
 			temp = array[i];
-			for (j = i; j > gap - 1 && array[j - gap] > temp; j -= gap)
+			for (j = i; j >= gap && array[j - gap] > temp; j -= gap)
 			{
 				array[j] = array[j - gap];
 			}
