@@ -29,5 +29,20 @@ void q_ksort(int *array, int low, int high, size_t size);
 void quick_sort(int *array, size_t size);
 void arr_swap(int *a, int *b);
 void shell_sort(int *array, size_t size);
+void swapList(listint_t **lead, listint_t **follow, int n);
+void increaseSort(listint_t **pointer, listint_t **limit, listint_t **list);
+void decreaseSort(listint_t **pointer, listint_t **limit, listint_t **list);
+void cocktail_sort_list(listint_t **list);
+void counting_sort(int *array, size_t size);
+int get_max(int *array, int size);
+void sortMerge(size_t start, size_t mid, size_t end, int *dest, int *array);
+void splitMergeSort(size_t start, size_t end, int *array, int *clone);
+void merge_sort(int *array, size_t size);
+void recursionHeap(int *array, int i, size_t size, int limit);
+void swapNumber(int *array, int a, int b);
+void heap_sort(int *array, size_t size);
+unsigned int powTen(unsigned int power);
+unsigned int countSort(int *array, size_t size, unsigned int digit);
+void radix_sort(int *array, size_t size);
 
 #endif /*SORT_h*/
